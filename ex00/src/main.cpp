@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:55 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/15 15:03:37 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/16 13:40:30 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		ScalarConverter::printOutput(av[1]);
 	}
 	return (0);
 }
