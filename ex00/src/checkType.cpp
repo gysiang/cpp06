@@ -3,77 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   checkType.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:40:35 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/16 15:14:09 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:52:09 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScalarConverter.hpp"
 
-static int isSpecial(const std::string &str)
+/**
+ * These functions will return an int that will define which type the characters are
+ * if not return NULL
+ */
+
+int ScalarConverter::checkChar(std::string str)
 {
-	if (str == "nan" || str == "nanf" || str == "+inf" || str == "+inff"
-		|| str == "-inf" || str == "-inff")
+	int i = 0;
+	int len = str.length();
+
+	// handle something with quotes and more than 1 character
+	// etc 'hello'
+	if (len >= 3 && str[0] == '\'' && str[len - 1] == '\'')
+	{
+		while (len > i)
+		{
+			if (std::isdigit(str[i]))
+			{
+				return (0);
+			}
+			i++;
+		}
+		return (1);
+	}
+	// handle the single character like o, returns
+	if (str.length() == 1 && !std::isdigit(str[0]))
 		return (1);
 	return (0);
 }
 
-static int isChar(const std::string &str, size_t &len)
+int ScalarConverter::checkInt(std::string str)
 {
-	if (len == 1 && !isdigit(str[0]))
-		return (1);
-	// handle ""
-	if (len == 3 && str[0] == '\'' && str[2] == '\'')
-		return (1);
-	return (0);
+
 }
 
-static int isInt(const std::string &str, size_t &len)
+int ScalarConverter::checkFloat(std::string str)
 {
-	bool	flag;
-	int		i;
 
-	flag = false;
-	i = 0;
-
-	if (str[0] == '-' || str[0] == '+')
-	{
-		i++;
-		flag = true;
-	}
-	while ((str[i] && len > 0 && len < 12) || (str[i] && !flag && len > 0 && len < 11))
-	{
-		if (!isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
 }
 
-static int isFloat(const std::string &str, size_t &len, size_t &dot)
+int ScalarConverter::checkDouble(std::string str)
 {
-	size_t	j;
-	size_t	i;
 
-	j = dot - 1;
-	while (j >= 0)
-	{
-		if (j != 0 && !isdigit(str[j]))
-			return (0);
-		if (j == 0 && str[j] != '+' && str[j] != '-' && !isdigit(str[j]))
-			return (0);
-		j--;
-	}
-	i = dot + 1;
-	while (i >= 0)
-	{
-		if (str[i] == 'f' && !isdigit(str[i]))
-			return (0);
-		if (str[i] == 'f' && i != len -1)
-			return (0);
-		i--;
-	}
-	return (1);
 }

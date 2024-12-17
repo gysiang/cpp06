@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:33 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/16 13:36:45 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:31:50 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScalarConverter.hpp"
 
-void	ScalarConverter::convert(std::string &str)
+void	ScalarConverter::convert(std::string str)
 {
-
+	int findType = NULL;
 
 }
 
