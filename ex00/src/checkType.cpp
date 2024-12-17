@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:40:35 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/17 13:52:09 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:08:22 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,33 @@ int ScalarConverter::checkChar(std::string str)
 
 int ScalarConverter::checkInt(std::string str)
 {
+	int sign = 1;
+	size_t i = 0;
+	long result = 0;
 
+	if (str[0] == '+' || str[0] == '-')
+	{
+		if (str[i])
+			sign = -1;
+		i++;
+	}
+	// check if all the characters are digits
+	while (str[i])
+	{
+		// similar to atoi
+		if (!std::isdigit(str[i]))
+			return (0);
+		result = result * 10 + (str[i] - '0');
+		if (sign == 1 && result > std::numeric_limits<int>::max())
+			return (0);
+		if (sign == -1 && -result > std::numeric_limits<int>::min())
+			return (0);
+		i++;
+	}
+	return (1);
 }
+
+/** *
 
 int ScalarConverter::checkFloat(std::string str)
 {
@@ -56,3 +81,4 @@ int ScalarConverter::checkDouble(std::string str)
 {
 
 }
+**/

@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:33 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/17 13:31:50 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:04:44 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,9 @@
 
 void	ScalarConverter::convert(std::string str)
 {
-	int findType = NULL;
-
+	(void) str;
 }
 
-
-bool ScalarConverter::checkInt(std::string str)
-{
-
-}
-
-bool ScalarConverter::checkFloat(std::string str)
-{
-
-}
-
-bool ScalarConverter::checkDouble(std::string str)
-{
-
-}
 
 ScalarConverter::ScalarConverter(void) {};
 

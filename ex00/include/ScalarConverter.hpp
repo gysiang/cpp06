@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:13 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/17 13:49:05 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:19:37 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SCALARCONVERTER_HPP
 
 #include <iostream>
+#include <limits>
 
 enum e_type
 {
@@ -29,10 +30,11 @@ class ScalarConverter
 	private:
 
 
-		static int checkChar(std::string str);
+		/** *
 		static int checkInt(std::string str);
 		static int checkFloat(std::string str);
 		static int checkDouble(std::string str);
+		**/
 
 
 		// default methods
@@ -42,6 +44,9 @@ class ScalarConverter
 		~ScalarConverter(void);
 
 	public:
+		static int checkChar(std::string str);
+		static int checkInt(std::string str);
+
 		static void	convert(std::string str);
 
 };

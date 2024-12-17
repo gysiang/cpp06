@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:55 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/17 13:22:49 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:09:57 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int	main(int ac, char **av)
 {
+	(void)ac;
+	(void)av;
+	/** *
 	if (ac != 2)
 	{
 		std::cout << "Wrong number of arguments." << std::endl;
@@ -22,7 +25,20 @@ int	main(int ac, char **av)
 	else
 	{
 		ScalarConverter::convert(av[1]);
-	}
+	} **/
+
+	std::string s = "o";
+	if (ScalarConverter::checkChar(s))
+		std::cout << "is Char" << std::endl;
+	else
+		std::cout << "is not Char" << std::endl;
+
+	std::string input = "123.45";
+	if (ScalarConverter::checkInt(input))
+		std::cout << input << " is a valid integer.\n";
+	else
+		std::cout << input << " is not a valid integer.\n";
+
 	return (0);
 }
 
