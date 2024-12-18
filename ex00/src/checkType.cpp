@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:40:35 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/17 17:08:22 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:10:53 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * if not return NULL
  */
 
-int ScalarConverter::checkChar(std::string str)
+int checkChar(const std::string &str)
 {
 	int i = 0;
 	int len = str.length();
@@ -42,7 +42,7 @@ int ScalarConverter::checkChar(std::string str)
 	return (0);
 }
 
-int ScalarConverter::checkInt(std::string str)
+int checkInt(const std::string &str)
 {
 	int sign = 1;
 	size_t i = 0;
@@ -50,35 +50,61 @@ int ScalarConverter::checkInt(std::string str)
 
 	if (str[0] == '+' || str[0] == '-')
 	{
-		if (str[i])
+		if (str[i] == '-')
+		{
 			sign = -1;
+		}
 		i++;
 	}
-	// check if all the characters are digits
-	while (str[i])
+	while (i < str.length())
 	{
-		// similar to atoi
 		if (!std::isdigit(str[i]))
 			return (0);
 		result = result * 10 + (str[i] - '0');
 		if (sign == 1 && result > std::numeric_limits<int>::max())
 			return (0);
-		if (sign == -1 && -result > std::numeric_limits<int>::min())
+		if (sign == -1 && -result < std::numeric_limits<int>::min())
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-/** *
 
-int ScalarConverter::checkFloat(std::string str)
+int checkFloat(const std::string &str)
 {
+	char *end = NULL;
 
+	std::strtof(str.c_str(), &end);
+
+	if (end != str.c_str() && *end == '\0')
+		return (1);
+	return (0);
 }
 
-int ScalarConverter::checkDouble(std::string str)
-{
 
+int checkDouble(const std::string &str)
+{
+	char *end = NULL;
+
+	std::strtod(str.c_str(), &end);
+
+	if (end != str.c_str() && *end == '\0')
+		return (1);
+	return (0);
 }
-**/
+
+int checkPseudoLiteral(const std::string &str)
+{
+	static std::set<std::string> ps;
+
+	if (ps.empty())
+	{
+		ps.insert("-inff");
+		ps.insert("+inff");
+		ps.insert("nanf");
+	}
+	if (ps.find(str) != ps.end())
+		return (1);
+	return (0);
+}

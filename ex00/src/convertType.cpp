@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   convertType.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/15 14:46:55 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/18 14:48:25 by gyong-si         ###   ########.fr       */
+/*   Created: 2024/12/18 13:19:16 by gyong-si          #+#    #+#             */
+/*   Updated: 2024/12/18 14:43:48 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScalarConverter.hpp"
 
-int	main(int ac, char **av)
+int		toInt(const std::string &str)
 {
-	(void)ac;
-	(void)av;
+	char	*end;
+	long	value;
 
-	std::string s = "0";
-	ScalarConverter::convert(s);
+	value = std::strtol(str.c_str(), &end, 10);
+	if (end != str.c_str() && *end == '\0')
+	{
+		return static_cast<int>(value);
+	}
 	return (0);
 }
 
+float	toFloat(const std::string &str)
+{
+	char *end = NULL;
 
-// My Logic
-/**
- * 1. Do several check functions to check what type the string is
- * 	a. check int
- *  b. check float
- *  c. check double
- *  d. check char
- *
- * 2. Once the type is confirmed try to typecast the string into the types
- * 	a. convert int
- *  b. convert float
- *  c. convert double
- *  d. convert char
- *
- * 3. Print the result to console.
- */
+	return std::strtof(str.c_str(), &end);
+}
+
+double	toDouble(const std::string &str)
+{
+	char *end = NULL;
+
+	return std::strtod(str.c_str(), &end);
+}
