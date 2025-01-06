@@ -6,26 +6,22 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 13:33:20 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/06 15:59:57 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:24:45 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScalarConverter.hpp"
-
-void	printEverything()
-{
-	std::cout << "Char: " << theChar << "'" << std::endl;
-	std::cout << "Int: " << theInt << "'" << std::endl;
-	std::cout << "Float: " << std::fixed << std::setprecision(1) << theFloat << "f" << std::endl;
-	std::cout << "Double: " << theDouble << "'" << std::endl;
-}
 
 void	printChar()
 {
 	theInt = static_cast<int>(theChar);
 	theFloat = static_cast<float>(theChar);
 	theDouble = static_cast<double>(theChar);
-	printEverything();
+
+	std::cout << "Char: " << theChar << "'" << std::endl;
+	std::cout << "Int: " << theInt << "'" << std::endl;
+	std::cout << "Float: " << std::fixed << std::setprecision(1) << theFloat << "f" << std::endl;
+	std::cout << "Double: " << theDouble << "'" << std::endl;
 }
 
 void	printableChar(int s)
@@ -70,8 +66,7 @@ void	printableChar(int s)
 
 void	printInt()
 {
-
-	printableChar(1);
+	printableChar(TYPE_INT);
 	theFloat = static_cast<float>(theInt);
 	theDouble = static_cast<double>(theInt);
 
@@ -83,7 +78,7 @@ void	printInt()
 
 void	printFloat()
 {
-	printableChar(2);
+	printableChar(TYPE_FLOAT);
 	if (theFloat > FLT_MAX || theFloat < FLT_MIN)
 		std::cout << "Int: impossible" << std::endl;
 	else
@@ -94,13 +89,12 @@ void	printFloat()
 	theDouble = static_cast<double>(theFloat);
 	std::cout << "Float: " << std::fixed << std::setprecision(1) << theFloat << "f" << std::endl;
 	std::cout << "Double: " << theDouble << std::endl;
-
 	return ;
 }
 
 void	printDouble()
 {
-	printableChar(3);
+	printableChar(TYPE_DOUBLE);
 	if (theFloat > FLT_MAX || theFloat < FLT_MIN)
 		std::cout << "Int: impossible" << std::endl;
 	else
@@ -123,7 +117,7 @@ void printPseudos()
 {
 	std::cout << "Char: " << "impossible" << std::endl;
 	std::cout << "Int: " << "impossible" << std::endl;
-	std::cout << "Float " << theFloat << "f" << std::endl;
-	std::cout << "Double" << theDouble << std::endl;
+	std::cout << "Float: " << theFloat << "f" << std::endl;
+	std::cout << "Double: " << theDouble << std::endl;
 	return ;
 }

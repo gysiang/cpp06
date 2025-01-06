@@ -6,12 +6,28 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:40:35 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/06 14:32:46 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:20:04 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScalarConverter.hpp"
 
+int checkSingle(const std::string &str)
+{
+	if (isdigit(*str.c_str()))
+	{
+		theInt = atoi(str.c_str());
+		type = TYPE_INT;
+		return (1);
+	}
+	else if (isprint(*str.c_str()))
+	{
+		theChar = str[0];
+		type = TYPE_CHAR;
+		return (1);
+	}
+	return (0);
+}
 
 int checkInt(double temp, const std::string &str)
 {

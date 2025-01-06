@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:13 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/06 15:26:39 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:25:52 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,12 @@ int checkInt(double temp, const std::string &str);
 int checkFloat(double temp, const std::string &str);
 int checkDouble(double temp, const std::string &str);
 int checkPseudoLiteral(const std::string &str);
+int checkSingle(const std::string &str);
 
-// convert functions
-
-int		toInt(const std::string &str);
-float	toFloat(const std::string &str);
-double	toDouble(const std::string &str);
 
 // print them out
-
 void	parseString(const std::string &str);
+void	printableChar(int s);
 void	printChar(void);
 void	printInt(void);
 void	printFloat(void);
