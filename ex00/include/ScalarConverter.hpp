@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:13 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/18 13:33:06 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:26:39 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 # define SCALARCONVERTER_HPP
 
 #include <iostream>
-#include <limits>
+#include <iomanip>
+#include <climits>
 #include <set>
 #include <cstdlib>
 #include <string>
+#include <cfloat>
+#include "GlobalVariables.hpp"
 
-enum e_type
-{
-	NA = 0,
-	CHAR = 1,
-	INT = 2,
-	FLOAT = 3,
-	DOUBLE = 4,
-};
+#define TYPE_CHAR 0
+#define TYPE_INT 1
+#define TYPE_FLOAT 2
+#define TYPE_DOUBLE 3
+#define TYPE_PSEUDOS 4
 
 class ScalarConverter
 {
@@ -40,16 +40,14 @@ class ScalarConverter
 
 	public:
 
-		static void	convert(std::string &str);
+		static void	convert(std::string str);
 
 };
 
 // checker functions
-int checkChar(const std::string &str);
-int checkInt(const std::string &str);
-int checkFloat(const std::string &str);
-int checkDouble(const std::string &str);
-// I need one function to check for psudeo literals
+int checkInt(double temp, const std::string &str);
+int checkFloat(double temp, const std::string &str);
+int checkDouble(double temp, const std::string &str);
 int checkPseudoLiteral(const std::string &str);
 
 // convert functions
@@ -60,10 +58,11 @@ double	toDouble(const std::string &str);
 
 // print them out
 
-void	printChar(const std::string &str);
-void	printInt(const std::string &str);
-void	printFloat(const std::string &str);
-void	printDouble(const std::string &str);
-
+void	parseString(const std::string &str);
+void	printChar(void);
+void	printInt(void);
+void	printFloat(void);
+void	printDouble(void);
+void	printPseudos(void);
 
 #endif

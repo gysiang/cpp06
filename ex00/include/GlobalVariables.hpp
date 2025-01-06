@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convertType.cpp                                    :+:      :+:    :+:   */
+/*   GlobalVariables.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/18 13:19:16 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/06 14:33:56 by gyong-si         ###   ########.fr       */
+/*   Created: 2025/01/06 11:53:42 by gyong-si          #+#    #+#             */
+/*   Updated: 2025/01/06 11:55:33 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ScalarConverter.hpp"
+#ifndef GLOBAL_VARIABLES_HPP
+#define GLOBAL_VARIABLES_HPP
 
-int	parseString(std::string &str)
-{
-	double temp = strtod(str.c_str(), NULL);
+extern int		type;
+extern char		theChar;
+extern int		theInt;
+extern float	theFloat;
+extern double	theDouble;
 
-	if (checkPseudoLiteral(str))
-		return (1);
-	if (temp >= INT_MAX || temp <= INT_MIN)
-		return (-1);
-	if (checkInt(temp, str))
-		return (1);
-	else if (checkFloat(temp, str))
-		return (1);
-	else if (checkDouble(temp, str))
-		return (1);
-	return (0);
-}
-
+#endif

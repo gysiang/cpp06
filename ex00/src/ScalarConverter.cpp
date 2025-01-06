@@ -6,35 +6,11 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:33 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/18 15:13:04 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:26:47 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScalarConverter.hpp"
-
-void	ScalarConverter::convert(std::string &str)
-{
-	// check the type of input
-	try
-	{
-		if (checkChar(str))
-			printChar(str);
-		else if (checkInt(str))
-		{
-			std::cout << "is Int\n";
-			printInt(str);
-		}
-		else if (checkFloat(str))
-		{
-			printFloat(str);
-		}
-		else if (checkDouble(str))
-			printDouble(str);
-	} catch (const std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
-}
-
 
 ScalarConverter::ScalarConverter(void) {};
 
@@ -50,5 +26,30 @@ ScalarConverter	&ScalarConverter::operator=(ScalarConverter const &src)
 };
 
 ScalarConverter::~ScalarConverter(void) {};
+
+void ScalarConverter::convert(std::string str)
+{
+	parseString(str);
+	switch (type)
+	{
+		case 0:
+			printChar();
+			break;
+		case 1:
+			printInt();
+			break;
+		case 2:
+			printFloat();
+			break;
+		case 3:
+			printDouble();
+			break;
+		case 4:
+			printPseudos();
+			break;
+		default:
+			std::cerr<< "Invalid" << std::endl;
+	}
+}
 
 
