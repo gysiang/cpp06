@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
+/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:55 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/06 15:27:40 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/07 15:07:27 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ double theDouble = 0.0;
 
 int	main(int ac, char **av)
 {
-	if (ac > 2)
+	if (ac != 2)
 		std::cerr << "Wrong Number of arguments" << std::endl;
-	ScalarConverter::convert(av[1]);
+	else
+		ScalarConverter::convert(av[1]);
 	return (0);
 }
 

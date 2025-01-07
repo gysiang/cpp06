@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
+/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:33 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/06 15:26:47 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/07 16:24:19 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ScalarConverter	&ScalarConverter::operator=(ScalarConverter const &src)
 
 ScalarConverter::~ScalarConverter(void) {};
 
-void ScalarConverter::convert(std::string str)
+void ScalarConverter::convert(const std::string str)
 {
 	parseString(str);
 	switch (type)
@@ -51,5 +51,3 @@ void ScalarConverter::convert(std::string str)
 			std::cerr<< "Invalid" << std::endl;
 	}
 }
-
-

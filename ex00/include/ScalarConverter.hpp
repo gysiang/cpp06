@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
+/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:13 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/06 16:25:52 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/07 15:06:44 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class ScalarConverter
 
 	public:
 
-		static void	convert(std::string str);
+		static void	convert(const std::string str);
 
 };
 
@@ -53,7 +53,7 @@ int checkSingle(const std::string &str);
 
 
 // print them out
-void	parseString(const std::string &str);
+int		parseString(const std::string str);
 void	printableChar(int s);
 void	printChar(void);
 void	printInt(void);

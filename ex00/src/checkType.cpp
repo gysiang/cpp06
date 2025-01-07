@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkType.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
+/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:40:35 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/06 16:20:04 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/08 00:14:55 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int checkSingle(const std::string &str)
 {
-	if (isdigit(*str.c_str()))
+	if (isdigit(*str.c_str()) && str.length() == 1)
 	{
 		theInt = atoi(str.c_str());
 		type = TYPE_INT;
 		return (1);
 	}
-	else if (isprint(*str.c_str()))
+	else if (isprint(*str.c_str()) && str.length() == 1)
 	{
 		theChar = str[0];
 		type = TYPE_CHAR;
@@ -63,13 +63,16 @@ int checkPseudoLiteral(const std::string &str)
 {
 	const std::string pseudoLiteral[] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
 
-	for (const std::string &s : pseudoLiteral)
+	for (int i = 0; i < 6; i++)
 	{
-		if (str == s)
+		if (str == pseudoLiteral[i])
 		{
 			type = TYPE_PSEUDOS;
+			theFloat = strtof(pseudoLiteral[i].c_str(), NULL);
+			theDouble = strtod(pseudoLiteral[i].c_str(), NULL);
 			return (1);
 		}
 	}
+
 	return (0);
 }
