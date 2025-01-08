@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:47:16 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/08 12:25:15 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/08 12:29:36 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int main()
 	-> Passed between different processes or systems.
 	In this ex01, the data is converted into type unsigned long which allows the pointer to be stored/ transmitted as raw data
 	Deserialize converts the type from unsigned long back to data.
+
+	reason why its unsigned long because int only has 32bits, long has 64 bits
 
 	- We need to check if the original pointer and the deserialised data is the same.
  */
