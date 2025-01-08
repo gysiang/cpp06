@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convertType.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 13:19:16 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/08 00:15:36 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/08 10:45:36 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	parseString(std::string str)
 {
-	if (checkSingle(str))
+	if (checkSingle(str) && str.length() == 1)
 		return (1);
 	if (checkPseudoLiteral(str))
 		return (1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkType.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:40:35 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/08 00:14:55 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/08 10:47:38 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int checkSingle(const std::string &str)
 {
-	if (isdigit(*str.c_str()) && str.length() == 1)
+	if (isdigit(*str.c_str()))
 	{
 		theInt = atoi(str.c_str());
 		type = TYPE_INT;

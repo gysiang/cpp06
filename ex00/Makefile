@@ -2,7 +2,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I include
 
-TARGET = a.out
+TARGET = convert
 
 # Define source and object directories
 SRC_DIR = src

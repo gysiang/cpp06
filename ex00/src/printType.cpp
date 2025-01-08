@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printType.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 13:33:20 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/08 00:13:16 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/08 10:49:43 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	printChar()
 {
-	std::cout << "print char" << std::endl;
-
 	theInt = static_cast<int>(theChar);
 	theFloat = static_cast<float>(theChar);
 	theDouble = static_cast<double>(theChar);
@@ -68,8 +66,6 @@ void	printableChar(int s)
 
 void	printInt()
 {
-	std::cout << "print int" << std::endl;
-
 	printableChar(TYPE_INT);
 	theFloat = static_cast<float>(theInt);
 	theDouble = static_cast<double>(theInt);
@@ -82,8 +78,6 @@ void	printInt()
 
 void	printFloat()
 {
-	std::cout << "print flt" << std::endl;
-
 	printableChar(TYPE_FLOAT);
 	if (theFloat > FLT_MAX || theFloat < FLT_MIN)
 		std::cout << "Int: impossible" << std::endl;
@@ -100,8 +94,6 @@ void	printFloat()
 
 void	printDouble()
 {
-	std::cout << "print double" << std::endl;
-
 	printableChar(TYPE_DOUBLE);
 	if (theFloat > FLT_MAX || theFloat < FLT_MIN)
 		std::cout << "Int: impossible" << std::endl;
@@ -123,7 +115,6 @@ void	printDouble()
 
 void printPseudos()
 {
-	std::cout << "print pseudo" << std::endl;
 	std::cout << "Char: " << "impossible" << std::endl;
 	std::cout << "Int: " << "impossible" << std::endl;
 	std::cout << "Float: " << theFloat << "f" << std::endl;

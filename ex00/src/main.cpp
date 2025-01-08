@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:55 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/07 15:07:27 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/08 10:42:37 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScalarConverter.hpp"
 
-int type = 0;
+int type = -1;
 char theChar = '\0';
 int theInt = 0;
 float theFloat = 0.0f;
