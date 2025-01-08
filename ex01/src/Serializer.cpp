@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:01:55 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/08 12:22:28 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/08 16:53:21 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ Serializer &Serializer::operator=(Serializer const &src)
 Serializer::~Serializer(void) {};
 
 
-unsigned long Serializer::serialize(Data* ptr)
+uintptr_t Serializer::serialize(Data* ptr)
 {
-	return reinterpret_cast<unsigned long>(ptr);
+	return reinterpret_cast<uintptr_t>(ptr);
 }
 
-Data* Serializer::deserialize(unsigned long raw)
+Data* Serializer::deserialize(uintptr_t raw)
 {
 	return reinterpret_cast<Data*>(raw);
 }

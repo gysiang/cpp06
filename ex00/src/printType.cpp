@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 13:33:20 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/08 10:49:43 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/08 16:51:03 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	printDouble()
 		theInt = static_cast<int>(theDouble);
 		std::cout << "Int: " << theInt << std::endl;
 	}
-	if (abs(theDouble) > FLT_MAX)
+	if (std::abs(theDouble) > FLT_MAX)
 		std::cout << "Float: " << "inf" << std::endl;
 	else
 	{

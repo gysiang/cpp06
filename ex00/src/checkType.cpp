@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:40:35 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/08 10:47:38 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/08 16:50:34 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int checkFloat(double temp, const std::string &str)
 {
 	if ((str.find('.') == std::string::npos) && (str.find('f') == std::string::npos))
 		return (-1);
-	if (abs(temp) > FLT_MAX)
+	if (std::abs(temp) > FLT_MAX)
 		return (-1);
 	type = TYPE_FLOAT;
 	theFloat = static_cast<float>(temp);
@@ -52,7 +52,7 @@ int checkDouble(double temp, const std::string &str)
 {
 	if (str.find('f') != std::string::npos)
 		return (-1);
-	if (abs(temp) > DBL_MAX)
+	if (std::abs(temp) > DBL_MAX)
 		return (-1);
 	type = TYPE_DOUBLE;
 	theDouble = static_cast<double>(temp);
