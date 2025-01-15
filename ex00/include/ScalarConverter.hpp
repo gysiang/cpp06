@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:13 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/07 15:06:44 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:00:31 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 #include <iostream>
 #include <iomanip>
 #include <climits>
+#include <limits>
 #include <set>
 #include <cstdlib>
 #include <string>
 #include <cfloat>
+#include <cmath>
 #include "GlobalVariables.hpp"
 
 #define TYPE_CHAR 0

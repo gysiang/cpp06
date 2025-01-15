@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 11:47:16 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/08 12:29:36 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/15 15:40:13 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int main()
 {
-	unsigned long serializedData;
-	Data *deserializedData;
+	uintptr_t	serializedData;
+	Data 		*deserializedData;
 
 	Data a = {42, "Hello 42"};
 

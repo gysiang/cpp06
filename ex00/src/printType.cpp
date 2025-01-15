@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 13:33:20 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/08 16:51:03 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:02:19 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	printInt()
 void	printFloat()
 {
 	printableChar(TYPE_FLOAT);
-	if (theFloat > FLT_MAX || theFloat < FLT_MIN)
+	if (theFloat > static_cast<float>(INT_MAX) || theFloat < static_cast<double>(INT_MIN))
 		std::cout << "Int: impossible" << std::endl;
 	else
 	{
@@ -95,14 +95,14 @@ void	printFloat()
 void	printDouble()
 {
 	printableChar(TYPE_DOUBLE);
-	if (theFloat > FLT_MAX || theFloat < FLT_MIN)
+	if (theFloat > static_cast<double>(INT_MAX) || theFloat < static_cast<double>(INT_MIN))
 		std::cout << "Int: impossible" << std::endl;
 	else
 	{
 		theInt = static_cast<int>(theDouble);
 		std::cout << "Int: " << theInt << std::endl;
 	}
-	if (std::abs(theDouble) > FLT_MAX)
+	if (std::abs(theDouble) > static_cast<double>(INT_MAX))
 		std::cout << "Float: " << "inf" << std::endl;
 	else
 	{
