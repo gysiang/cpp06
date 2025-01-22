@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:13 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/15 16:00:31 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/22 14:35:39 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #include <string>
 #include <cfloat>
 #include <cmath>
+#include <sstream>
 #include "GlobalVariables.hpp"
 
 #define TYPE_CHAR 0

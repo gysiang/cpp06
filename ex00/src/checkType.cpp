@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:40:35 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/15 15:54:47 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/22 14:42:40 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int checkSingle(const std::string &str)
 
 int checkInt(double temp, const std::string &str)
 {
+	/** *
 	if (str.find('f') != std::string::npos)
 	{
 		return (-1);
@@ -45,6 +46,12 @@ int checkInt(double temp, const std::string &str)
 	}
 	if (temp > INT_MAX || temp < INT_MIN)
 		return (-1);
+	**/
+	std::stringstream ss(str);
+	int value;
+
+	if (!(ss >> value) || !ss.eof())
+		return (0);
 	type = 1;
 	theInt = static_cast<int>(temp);
 	return (1);
@@ -68,9 +75,18 @@ int checkFloat(double temp, const std::string &str)
 
 int checkDouble(double temp, const std::string &str)
 {
+	/** *
 	if (str.find('f') != std::string::npos)
 		return (-1);
 	if (std::abs(temp) > DBL_MAX)
+		return (-1);
+	**/
+	std::stringstream ss(str);
+	double value;
+
+	if (!(ss >> value) || !ss.eof())
+		return (0);
+	if (std::abs(value) > DBL_MAX)
 		return (-1);
 	type = TYPE_DOUBLE;
 	theDouble = static_cast<double>(temp);
@@ -79,9 +95,9 @@ int checkDouble(double temp, const std::string &str)
 
 int checkPseudoLiteral(const std::string &str)
 {
-	const std::string pseudoLiteral[] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
+	const std::string pseudoLiteral[] = {"-inff", "-INFF", "+inff", "+INFF", "nanf", "NANF", "-inf", "-INF" "+inf", "+INF", "nan", "NAN"};
 
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < 12; i++)
 	{
 		if (str == pseudoLiteral[i])
 		{

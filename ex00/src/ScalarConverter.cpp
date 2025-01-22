@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:46:33 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/15 15:38:46 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/01/22 14:43:02 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ ScalarConverter::~ScalarConverter(void) {};
 void ScalarConverter::convert(const std::string str)
 {
 	parseString(str);
+	//std::cout << "Type : " << type << std::endl;
 	switch (type)
 	{
 		case 0:
