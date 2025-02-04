@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkType.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
+/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:40:35 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/01/22 14:42:40 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/02/04 12:49:51 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,6 @@ int checkSingle(const std::string &str)
 
 int checkInt(double temp, const std::string &str)
 {
-	/** *
-	if (str.find('f') != std::string::npos)
-	{
-		return (-1);
-	}
-	if (str.find('.') != std::string::npos)
-	{
-		if (std::floor(temp) != temp)
-			return (-1);
-	}
-	if (temp > INT_MAX || temp < INT_MIN)
-		return (-1);
-	**/
 	std::stringstream ss(str);
 	int value;
 
@@ -75,12 +62,6 @@ int checkFloat(double temp, const std::string &str)
 
 int checkDouble(double temp, const std::string &str)
 {
-	/** *
-	if (str.find('f') != std::string::npos)
-		return (-1);
-	if (std::abs(temp) > DBL_MAX)
-		return (-1);
-	**/
 	std::stringstream ss(str);
 	double value;
 
@@ -95,7 +76,7 @@ int checkDouble(double temp, const std::string &str)
 
 int checkPseudoLiteral(const std::string &str)
 {
-	const std::string pseudoLiteral[] = {"-inff", "-INFF", "+inff", "+INFF", "nanf", "NANF", "-inf", "-INF" "+inf", "+INF", "nan", "NAN"};
+	const std::string pseudoLiteral[] = {"-inff", "-INFF", "+inff", "+INFF", "nanf", "NANF", "-inf", "-INF", "+inf", "+INF", "nan", "NAN"};
 
 	for (int i = 0; i < 12; i++)
 	{
@@ -107,6 +88,19 @@ int checkPseudoLiteral(const std::string &str)
 			return (1);
 		}
 	}
+	return (0);
+}
 
+int checkNumbers(const std::string &str)
+{
+	std::stringstream ss(str);
+	double value;
+
+	ss >> value;
+
+	if (ss.fail() || !ss.eof())
+		return (1);
+	if (str.length() > 6)
+		return (1);
 	return (0);
 }

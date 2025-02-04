@@ -19,6 +19,11 @@ int main()
 
 	Data a = {42, "Hello 42"};
 
+	if (a.str.empty())
+	{
+		std::cout << "Data is not valid" << std::endl;
+		return (1);
+	}
 	serializedData = Serializer::serialize(&a);
 	deserializedData = Serializer::deserialize(serializedData);
 	if (!deserializedData)
