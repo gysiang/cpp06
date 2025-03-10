@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:40:35 by gyong-si          #+#    #+#             */
-/*   Updated: 2025/03/10 11:32:34 by gyong-si         ###   ########.fr       */
+/*   Updated: 2025/03/10 11:35:54 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,19 +94,5 @@ int checkPseudoLiteral(const std::string &str)
 			return (1);
 		}
 	}
-	return (0);
-}
-
-int checkNumbers(const std::string &str)
-{
-	std::stringstream ss(str);
-	double value;
-
-	ss >> value;
-
-	if (ss.fail() || !ss.eof())
-		return (1);
-	if (str.length() > 6)
-		return (1);
 	return (0);
 }
